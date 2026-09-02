@@ -1,23 +1,45 @@
-import React from 'react';
+import { experiencia } from '../data/profile';
+import Section from './Section';
 
-const Experience = () => {
+export default function Experience({ roleId, coincide }) {
   return (
-    <section id="experiencia" className="editorial-section">
-      <aside>
-        <p className="section-indicator">§03 — EXPERIENCIA</p>
-      </aside>
-      <div className="section-content">
-        <h2>Trayectoria Profesional</h2>
-        <div className="experience-item">
-          <h3>Auditor de Sistemas y Soporte Técnico</h3>
-          <p className="experience-meta">Enivel7 | 01-2026 - Presente</p>
-          <p>
-            Liderazgo en la resolución crítica de incidentes de soporte y garantía de conectividad remota segura (VPN). Participación activa en el ciclo de auditoría de sistemas para casas y agencias de cambio, asegurando el estricto cumplimiento de las normativas del Banco Central de la República Argentina (BCRA) y mitigando riesgos operativos. Ejecución integral de pruebas de aseguramiento de calidad (QA/Testing) sobre plataformas internas y redacción de informes técnicos de control para la toma de decisiones gerenciales.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
+    <Section
+      id="experiencia"
+      numero="04"
+      etiqueta="Experiencia"
+      titulo="Trayectoria profesional"
+    >
+      {experiencia.map((puesto) => {
+        // Con un perfil elegido, los logros relevantes suben y se destacan.
+        const logros =
+          roleId === 'todo'
+            ? puesto.logros
+            : [...puesto.logros].sort(
+                (a, b) => Number(coincide(b.roles)) - Number(coincide(a.roles)),
+              );
 
-export default Experience;
+        return (
+          <article key={`${puesto.empresa}-${puesto.puesto}`} className="entry">
+            <div className="entry__head">
+              <h3 className="entry__role">{puesto.puesto}</h3>
+              <span className="entry__period">{puesto.periodo}</span>
+            </div>
+            <p className="entry__org">{puesto.empresa}</p>
+            <p>{puesto.resumen}</p>
+
+            <ul className="entry__list">
+              {logros.map((logro) => (
+                <li
+                  key={logro.texto.slice(0, 40)}
+                  data-match={roleId === 'todo' ? undefined : String(coincide(logro.roles))}
+                >
+                  {logro.texto}
+                </li>
+              ))}
+            </ul>
+          </article>
+        );
+      })}
+    </Section>
+  );
+}

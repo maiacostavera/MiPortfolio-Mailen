@@ -1,0 +1,320 @@
+<!doctype html>
+<!--
+  Fuente del CV en PDF. Para regenerarlo despues de editar este archivo:
+      npm run cv          (desde la carpeta frontend/)
+  La salida queda en frontend/public/cv-mailen-acosta-vera.pdf
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mailen Acosta Vera — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 11mm 13mm;
+      }
+
+      :root {
+        --text: #14110e;
+        --muted: #554e45;
+        --faint: #8b8377;
+        --accent: #a8480a;
+        --line: rgba(20, 17, 14, 0.16);
+        --serif: 'Playfair Display', Georgia, serif;
+        --sans: 'Inter', system-ui, sans-serif;
+        --mono: 'IBM Plex Mono', monospace;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: var(--sans);
+        font-size: 8.7pt;
+        line-height: 1.4;
+        color: var(--text);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      h1, h2, h3 { font-family: var(--serif); font-weight: 500; margin: 0; }
+
+      .header { border-bottom: 1.5px solid var(--text); padding-bottom: 8pt; margin-bottom: 11pt; }
+      .header h1 { font-size: 21pt; line-height: 1.05; letter-spacing: -0.02em; }
+      .header .role {
+        font-family: var(--mono);
+        font-size: 7.4pt;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 5pt;
+      }
+      .header .contact {
+        margin-top: 7pt;
+        font-family: var(--mono);
+        font-size: 7.4pt;
+        color: var(--muted);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4pt 14pt;
+      }
+      .header .contact a { color: var(--muted); text-decoration: none; }
+
+      .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22pt; }
+
+      section { margin-bottom: 9pt; break-inside: avoid; }
+
+      .section-title {
+        font-family: var(--mono);
+        font-size: 7.6pt;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-bottom: 3pt;
+        margin-bottom: 6pt;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+      }
+      .section-title::after { content: attr(data-num); color: var(--faint); }
+
+      p { margin: 0 0 5pt; color: var(--muted); }
+
+      .entry { margin-bottom: 7pt; break-inside: avoid; }
+      .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+      .entry-role { font-size: 10.5pt; }
+      .entry-period {
+        font-family: var(--mono);
+        font-size: 7.4pt;
+        letter-spacing: 0.07em;
+        color: var(--faint);
+        white-space: nowrap;
+      }
+      .entry-org {
+        font-family: var(--mono);
+        font-size: 8pt;
+        color: var(--accent);
+        margin: 2pt 0 4pt;
+      }
+
+      ul { margin: 4pt 0 0; padding: 0; list-style: none; }
+      li { position: relative; padding-left: 9pt; margin-bottom: 2.5pt; color: var(--muted); }
+      li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 5.2pt;
+        width: 4pt;
+        height: 0.8pt;
+        background: var(--accent);
+      }
+
+      .skill-block { margin-bottom: 6pt; break-inside: avoid; }
+      .skill-title {
+        font-family: var(--mono);
+        font-size: 7.4pt;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 3pt;
+      }
+      .skill-items { color: var(--muted); font-size: 8.2pt; }
+
+      .project { margin-bottom: 6.5pt; break-inside: avoid; }
+      .project-name { font-family: var(--serif); font-size: 9.8pt; }
+      .project-stack {
+        font-family: var(--mono);
+        font-size: 7.2pt;
+        color: var(--faint);
+        margin-top: 2pt;
+        letter-spacing: 0.04em;
+      }
+      .project-desc { font-size: 8.1pt; margin: 2pt 0 0; }
+
+      footer {
+        margin-top: 8pt;
+        padding-top: 6pt;
+        border-top: 1px solid var(--line);
+        font-family: var(--mono);
+        font-size: 7pt;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--faint);
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Mailen Acosta Vera</h1>
+      <div class="role">Desarrolladora de Software · QA · Auditoría de Sistemas</div>
+      <div class="contact">
+        <span>mai.acostavera@gmail.com</span>
+        <span>Buenos Aires, Argentina</span>
+        <a href="https://github.com/maiacostavera">github.com/maiacostavera</a>
+        <a href="https://www.linkedin.com/in/mailen-acosta-vera-4606a3266/">linkedin.com/in/mailen-acosta-vera</a>
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title" data-num="01">Perfil</div>
+      <p>
+        Desarrolladora de software y auditora de sistemas. Trabajo en el cruce entre el
+        desarrollo, el aseguramiento de calidad y el cumplimiento normativo: construyo
+        aplicaciones full stack y verifico que sean seguras, trazables y auditables.
+        Experiencia en entornos financieros regulados bajo normativa del BCRA.
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title" data-num="02">Experiencia profesional</div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-role">Auditora de Sistemas y Soporte Técnico</h3>
+          <span class="entry-period">01-2026 — Presente</span>
+        </div>
+        <div class="entry-org">Enivel7 · Buenos Aires</div>
+        <ul>
+          <li>
+            Participación en el ciclo de auditoría de sistemas para casas y agencias de
+            cambio, asegurando el cumplimiento de las normativas del BCRA y mitigando
+            riesgos operativos.
+          </li>
+          <li>
+            Resolución de incidentes críticos de soporte y garantía de conectividad remota
+            segura mediante VPN.
+          </li>
+          <li>
+            Ejecución integral de pruebas de aseguramiento de calidad (QA / testing) sobre
+            plataformas internas.
+          </li>
+          <li>
+            Redacción de informes técnicos de control para la toma de decisiones
+            gerenciales.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-num="03">Proyectos destacados</div>
+      <div class="grid">
+        <div>
+          <div class="project">
+            <div class="project-name">FoodieByte</div>
+            <div class="project-stack">React 19 · Express · Sequelize · MySQL · JWT</div>
+            <p class="project-desc">
+              Plataforma full stack de pedidos gastronómicos: API REST propia, autenticación
+              con JWT y bcrypt, control de accesos por roles, panel de administración y
+              esquema de base de datos versionado con migraciones.
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name">MercadByte</div>
+            <div class="project-stack">Angular · TypeScript · Bootstrap</div>
+            <p class="project-desc">
+              E-commerce de tecnología con catálogo por categorías, búsqueda dinámica y
+              flujo de compra simulado. Trabajo final de Programación Web I (UCES).
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="project">
+            <div class="project-name">App Películas</div>
+            <div class="project-stack">Kotlin · Android SDK · Material Design</div>
+            <p class="project-desc">
+              Aplicación Android nativa con alta y listado de películas, adapter propio para
+              RecyclerView y build con Gradle Kotlin DSL.
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name">El Bajoncito · Enchanted Hall</div>
+            <div class="project-stack">HTML5 · CSS3 · JavaScript</div>
+            <p class="project-desc">
+              Sitios responsive para comercios reales: menú digital con pedido por WhatsApp
+              y sitio institucional multipágina para una organizadora de eventos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-num="04">Conocimientos técnicos</div>
+      <div class="grid">
+        <div>
+          <div class="skill-block">
+            <div class="skill-title">Auditoría y cumplimiento</div>
+            <div class="skill-items">
+              Marcos normativos BCRA · Análisis de riesgos tecnológicos · Control de accesos
+              y revisión de logs · Informes técnicos de control
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-title">QA y testing</div>
+            <div class="skill-items">
+              TDD · Cypress / Playwright · Postman · Jest · Pruebas de integración y
+              regresión
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-title">Infraestructura y soporte</div>
+            <div class="skill-items">
+              Redes y VPN · Resolución de incidentes y mesa de ayuda · Administración de
+              accesos · Linux · Docker
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="skill-block">
+            <div class="skill-title">Frontend</div>
+            <div class="skill-items">
+              React 19 · JavaScript (ES2023+) y TypeScript · Angular · HTML5 y CSS3
+              responsive · Kotlin (Android)
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-title">Backend y datos</div>
+            <div class="skill-items">
+              Node.js + Express · Sequelize · MySQL / PostgreSQL · APIs REST, JWT y bcrypt ·
+              Python
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-title">Herramientas</div>
+            <div class="skill-items">
+              Git y GitHub · Make (automatización de flujos) · Vite · Godot (GDScript)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-num="05">Formación</div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-role">Tecnicatura en Programación de Sistemas</h3>
+          <span class="entry-period">03-2024 — Presente</span>
+        </div>
+        <div class="entry-org">Universidad de Ciencias Empresariales y Sociales (UCES)</div>
+        <p>
+          Ciencias de la computación, estructuras de datos, programación web, aplicaciones
+          móviles y bases de datos relacionales.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span>Mailen Acosta Vera</span>
+      <span>Portfolio: github.com/maiacostavera</span>
+    </footer>
+  </body>
+</html>

@@ -1,13 +1,52 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Mailen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Mailen Acosta Vera — Desarrolladora de Software y Auditora de Sistemas</title>
+    <meta
+      name="description"
+      content="Portfolio de Mailen Acosta Vera: desarrollo full stack, QA y auditoría de sistemas bajo normativa BCRA. Proyectos en React, Node, Angular y Kotlin."
+    />
+    <meta name="author" content="Mailen Acosta Vera" />
+    <meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13110f" media="(prefers-color-scheme: dark)" />
+
+    <!-- Vista previa al compartir el link (LinkedIn, WhatsApp, Slack) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mailen Acosta Vera — Desarrolladora de Software y Auditora de Sistemas"
+    />
+    <meta
+      property="og:description"
+      content="Desarrollo full stack, QA y auditoría de sistemas. Proyectos en React, Node, Angular y Kotlin."
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Aplica el tema antes del primer pintado para evitar el destello blanco.
+      (function () {
+        try {
+          var guardado = localStorage.getItem('portfolio-theme');
+          var oscuro =
+            guardado === 'dark' ||
+            (!guardado && matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.setAttribute('data-theme', oscuro ? 'dark' : 'light');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

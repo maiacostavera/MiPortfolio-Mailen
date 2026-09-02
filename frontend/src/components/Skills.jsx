@@ -1,59 +1,52 @@
-import React from 'react';
+import { useMemo } from 'react';
+import { skills } from '../data/profile';
+import Section from './Section';
 
-const Skills = () => {
-  const categories = [
-    {
-      title: 'Desarrollo & Backend',
-      items: ['React, TypeScript, Next.js', 'Node.js, Python', 'PostgreSQL', 'REST APIs']
-    },
-    {
-      title: 'QA & Testing Avanzado',
-      items: ['Cypress / Playwright', 'Postman (Testing de APIs)', 'TDD (Test-Driven Development)', 'Jest', 'Pruebas de Integración y Regresión']
-    },
-    {
-      title: 'Auditoría & Cumplimiento',
-      items: ['Marcos normativos BCRA', 'Análisis de Riesgos Tecnológicos', 'Control de Accesos y Logs', 'Aseguramiento de Calidad de Procesos']
-    },
-    {
-      title: 'DevOps, Infraestructura & Automatización',
-      items: ['Git & GitHub', 'Docker', 'Make (Automatizaciones de flujos)', 'Redes VPN y Seguridad perimetral', 'Linux']
-    }
-  ];
+export default function Skills({ roleId, coincide }) {
+  // Los grupos relevantes para el perfil elegido se muestran primero.
+  const ordenados = useMemo(() => {
+    const conMeta = skills.map((grupo, indice) => ({
+      grupo,
+      orden: indice,
+      relevante: coincide(grupo.roles),
+    }));
+
+    if (roleId === 'todo') return conMeta;
+
+    return [...conMeta].sort((a, b) => {
+      if (a.relevante !== b.relevante) return a.relevante ? -1 : 1;
+      return a.orden - b.orden;
+    });
+  }, [roleId, coincide]);
 
   return (
-    <section id="habilidades" className="editorial-section">
-      <aside>
-        <p className="section-indicator">§02 — SKILLS</p>
-      </aside>
-      <div className="section-content">
-        <h2>Conocimientos Técnicos</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '1rem' }}>
-          {categories.map((cat, idx) => (
-            <div key={idx}>
-              <h3 style={{ 
-                fontSize: '1rem', 
-                marginBottom: '1rem', 
-                fontFamily: 'var(--font-mono)', 
-                textTransform: 'lowercase',
-                color: 'var(--accent-color)',
-                borderBottom: '1px solid #eaeaea',
-                paddingBottom: '0.5rem'
-              }}>
-                {cat.title}
-              </h3>
-              <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                {cat.items.map((item, i) => (
-                  <li key={i} style={{ fontSize: '1rem', color: 'var(--text-color)' }}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+    <Section id="skills" numero="03" etiqueta="Skills" titulo="Conocimientos técnicos">
+      <p className="section__lead">
+        Herramientas con las que trabajo hoy, entre el desarrollo, el control de calidad
+        y la infraestructura.
+      </p>
 
-export default Skills;
+      <div className="skills">
+        {ordenados.map(({ grupo, relevante }) => (
+          <div
+            key={grupo.titulo}
+            className={`skillgroup${roleId !== 'todo' && !relevante ? ' skillgroup--dim' : ''}`}
+          >
+            <h3 className="skillgroup__title">
+              {grupo.titulo}
+              {/* El badge solo tiene sentido en grupos que no aplican a todos los perfiles. */}
+              {roleId !== 'todo' && relevante && grupo.roles.length < 3 && (
+                <span className="skillgroup__badge">clave</span>
+              )}
+            </h3>
+            <ul>
+              {grupo.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
