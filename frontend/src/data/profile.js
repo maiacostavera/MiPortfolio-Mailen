@@ -9,7 +9,9 @@ export const profile = {
   github: 'https://github.com/maiacostavera',
   githubUser: 'maiacostavera',
   linkedin: 'https://www.linkedin.com/in/mailen-acosta-vera-4606a3266/',
-  cv: '/cv-mailen-acosta-vera.pdf',
+  // BASE_URL contempla que el sitio pueda vivir en un subdirectorio,
+  // como pasa en GitHub Pages (/MiPortfolio-Mailen/).
+  cv: `${import.meta.env.BASE_URL}cv-mailen-acosta-vera.pdf`,
   disponibilidad: 'Abierta a nuevas oportunidades',
 };
 

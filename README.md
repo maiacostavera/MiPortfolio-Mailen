@@ -75,17 +75,37 @@ para qué perfiles se destaca.
 
 ## Publicar el sitio
 
-El frontend es estático, así que alcanza con cualquier hosting:
+### GitHub Pages (ya configurado)
+
+El repositorio incluye `.github/workflows/deploy.yml`: cada push a `main`
+compila el sitio y lo publica solo. **Falta habilitarlo una única vez:**
+
+1. Ir a **Settings → Pages** en el repositorio.
+2. En *Build and deployment*, elegir **Source: GitHub Actions**.
+3. Hacer merge a `main` (o correr el workflow a mano desde la pestaña
+   *Actions → Deploy a GitHub Pages → Run workflow*).
+
+El sitio queda en **https://maiacostavera.github.io/MiPortfolio-Mailen/**.
+
+El workflow corre el linter antes de compilar, así que un error de código frena
+el deploy en vez de publicar algo roto.
+
+### Otros hostings
+
+El sitio es estático, así que sirve cualquier hosting. Como en Vercel, Netlify o
+un dominio propio el sitio vive en la raíz y no en un subdirectorio, hay que
+compilar sin prefijo:
 
 ```bash
-cd frontend && npm run build   # genera frontend/dist
+cd frontend && VITE_BASE=/ npm run build   # genera frontend/dist
 ```
 
-- **Vercel / Netlify**: apuntar al directorio `frontend`, comando `npm run build`,
-  carpeta de salida `dist`.
-- **GitHub Pages**: publicar el contenido de `frontend/dist`. Si el sitio queda
-  en `usuario.github.io/MiPortfolio-Mailen`, agregar
-  `base: '/MiPortfolio-Mailen/'` en `frontend/vite.config.js`.
+- **Vercel / Netlify**: directorio raíz `frontend`, comando
+  `VITE_BASE=/ npm run build`, carpeta de salida `dist`.
+
+> El prefijo por defecto es `/MiPortfolio-Mailen/` porque es el que necesita
+> GitHub Pages. Si alguna vez cambia el nombre del repositorio, hay que
+> actualizarlo en `frontend/vite.config.js`.
 
 ## API opcional (backend)
 
