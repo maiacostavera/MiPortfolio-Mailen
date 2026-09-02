@@ -1,13 +1,14 @@
 {
-  "name": "backend",
+  "name": "portfolio-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API opcional del portfolio. El sitio funciona sin ella.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mailen Acosta Vera",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
