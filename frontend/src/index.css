@@ -353,7 +353,7 @@ img {
   margin-bottom: 2.5rem;
 }
 
-.hero__actions {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -999,5 +999,132 @@ img {
 @media (max-width: 560px) {
   .hero__sep {
     display: none;
+  }
+}
+
+/* ============================================================
+   15. Movimiento y cursor
+   ============================================================ */
+
+/* Barra de avance de lectura */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: 0 50%;
+  z-index: 200;
+}
+
+/* Revelado de titulos palabra por palabra.
+   El span externo hace de mascara y el interno es el que sube. */
+.reveal-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.08em; /* aire para colas de g, j, y */
+  margin-bottom: -0.08em;
+}
+
+.reveal-word:not(:last-child)::after {
+  content: ' ';
+  white-space: pre;
+}
+
+.reveal-word__inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Cursor propio: solo se activa en escritorio con mouse.
+   Las piezas se centran con margin negativo para no pelear con el translate3d. */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor--punto {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.cursor--anillo {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  transition: opacity 0.3s ease, width 0.3s var(--ease), height 0.3s var(--ease),
+    margin 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.cursor--anillo[data-sobre] {
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Escondemos el cursor del sistema solo mientras el propio esta activo. */
+.cursor-propio,
+.cursor-propio * {
+  cursor: none !important;
+}
+
+/* Los botones magneticos se mueven por transform desde JS: la transicion
+   suaviza la vuelta al centro cuando el mouse se va. */
+.btn,
+.icon-btn {
+  transition: background 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease), transform 0.35s var(--ease);
+}
+
+/* El hover ya no sube el boton: lo mueve el imán. */
+.btn:hover {
+  transform: none;
+}
+
+.icon-btn:hover {
+  transform: none;
+}
+
+/* Hover mas marcado en los proyectos */
+.project {
+  transition: opacity 0.4s var(--ease), transform 0.45s var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project:hover {
+    transform: translateX(10px);
+  }
+
+  .project:hover .project__title {
+    color: var(--accent);
+  }
+}
+
+.project__title {
+  transition: color 0.35s var(--ease);
+}
+
+/* Con movimiento reducido no hay cursor propio ni desplazamientos. */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    display: none;
+  }
+
+  .project:hover {
+    transform: none;
   }
 }

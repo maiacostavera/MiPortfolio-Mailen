@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
 import About from './components/About';
 import Contact from './components/Contact';
+import Cursor from './components/Cursor';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
+import ScrollProgress from './components/ScrollProgress';
 import Skills from './components/Skills';
 import proyectos from './data/projects.json';
 import { profile } from './data/profile';
@@ -35,6 +37,9 @@ export default function App() {
       <a className="skip-link" href="#proyectos">
         Saltar al contenido
       </a>
+
+      <ScrollProgress />
+      <Cursor />
 
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
 

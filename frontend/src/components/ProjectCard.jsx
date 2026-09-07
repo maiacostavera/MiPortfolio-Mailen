@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import { IconExternal, IconGithub, IconStar } from './Icons';
 
 // Colores oficiales de GitHub por lenguaje: dan textura visual sin inventar capturas.
@@ -29,13 +30,20 @@ function tiempoRelativo(iso) {
 }
 
 export default function ProjectCard({ proyecto, indice, github, atenuado }) {
+  const reducirMovimiento = useReducedMotion();
   const urlRepo = github?.url ?? `https://github.com/maiacostavera/${proyecto.repo}`;
   const demo = proyecto.demo ?? github?.homepage ?? null;
   const lenguaje = github?.lenguaje;
   const actualizado = tiempoRelativo(github?.actualizado);
 
   return (
-    <article className={`project${atenuado ? ' project--dim' : ''}`}>
+    <motion.article
+      className={`project${atenuado ? ' project--dim' : ''}`}
+      initial={reducirMovimiento ? false : { opacity: 0, y: 40 }}
+      whileInView={{ opacity: atenuado ? 0.45 : 1, y: 0 }}
+      viewport={{ once: true, margin: '-90px' }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="project__index" aria-hidden>
         {String(indice).padStart(2, '0')}
       </div>
@@ -96,6 +104,6 @@ export default function ProjectCard({ proyecto, indice, github, atenuado }) {
           )}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

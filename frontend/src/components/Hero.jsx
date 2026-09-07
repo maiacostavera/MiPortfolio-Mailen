@@ -1,7 +1,19 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { profile } from '../data/profile';
+import { useMagnetic } from '../hooks/useMagnetic';
+import AnimatedNumber from './AnimatedNumber';
 import { IconArrow, IconDownload } from './Icons';
+import RevealText from './RevealText';
 import RoleSwitcher from './RoleSwitcher';
+
+function BotonMagnetico({ href, className, children, ...resto }) {
+  const ref = useMagnetic(0.28);
+  return (
+    <a ref={ref} href={href} className={className} {...resto}>
+      {children}
+    </a>
+  );
+}
 
 export default function Hero({ role, roleId, onRoleChange, stats }) {
   const reducirMovimiento = useReducedMotion();
@@ -38,35 +50,38 @@ export default function Hero({ role, roleId, onRoleChange, stats }) {
           {profile.nombre}
         </motion.p>
 
-        <motion.h1
-          className="hero__title"
+        {/* key por perfil: el titulo se vuelve a revelar al cambiar de puesto */}
+        <RevealText
           key={role.id}
-          {...animar(0.14)}
-        >
-          {role.titulo}
-        </motion.h1>
+          as="h1"
+          className="hero__title"
+          texto={role.titulo}
+          delay={0.15}
+        />
 
-        <motion.p className="hero__lead" key={`lead-${role.id}`} {...animar(0.2)}>
+        <motion.p className="hero__lead" key={`lead-${role.id}`} {...animar(0.35)}>
           {role.bajada}
         </motion.p>
 
-        <motion.div className="hero__actions" {...animar(0.26)}>
-          <a className="btn btn--primary" href="#proyectos">
+        <motion.div className="actions" {...animar(0.42)}>
+          <BotonMagnetico href="#proyectos" className="btn btn--primary">
             Ver proyectos <IconArrow />
-          </a>
-          <a className="btn" href={profile.cv} download>
+          </BotonMagnetico>
+          <BotonMagnetico href={profile.cv} className="btn" download>
             Descargar CV <IconDownload />
-          </a>
+          </BotonMagnetico>
         </motion.div>
 
-        <motion.div {...animar(0.32)}>
+        <motion.div {...animar(0.48)}>
           <RoleSwitcher roleId={roleId} onChange={onRoleChange} />
         </motion.div>
 
-        <motion.div className="hero__stats" {...animar(0.38)}>
+        <motion.div className="hero__stats" {...animar(0.54)}>
           {stats.map((stat) => (
             <div key={stat.label}>
-              <div className="stat__value">{stat.value}</div>
+              <div className="stat__value">
+                <AnimatedNumber value={stat.value} />
+              </div>
               <div className="stat__label">{stat.label}</div>
             </div>
           ))}
