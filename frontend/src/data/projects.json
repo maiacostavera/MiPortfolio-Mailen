@@ -104,28 +104,6 @@
     "demo": null
   },
   {
-    "id": "juego-godot",
-    "repo": "ejerciciovideojuego",
-    "titulo": "Juego 2D en Godot",
-    "tipo": "Game dev",
-    "destacado": false,
-    "roles": [
-      "fullstack"
-    ],
-    "resumen": "Videojuego 2D con personaje controlable, mapa por tiles y generación automática de objetos.",
-    "detalle": "Ejercicio de desarrollo de videojuegos con el motor Godot: escenas, nodos y scripting en GDScript.",
-    "highlights": [
-      "Movimiento y colisiones del jugador con KinematicBody2D",
-      "Generador de objetos con instanciación dinámica de escenas",
-      "Mapa construido con TileMap y tileset propio"
-    ],
-    "stack": [
-      "Godot",
-      "GDScript"
-    ],
-    "demo": null
-  },
-  {
     "id": "portfolio",
     "repo": "MiPortfolio-Mailen",
     "titulo": "Este portfolio",

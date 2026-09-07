@@ -117,7 +117,6 @@ export const skills = [
       'Git y GitHub',
       'Make (automatización de flujos)',
       'Vite',
-      'Godot (GDScript)',
     ],
   },
 ];

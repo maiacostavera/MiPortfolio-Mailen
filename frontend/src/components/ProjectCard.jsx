@@ -10,7 +10,6 @@ const COLOR_LENGUAJE = {
   SCSS: '#c6538c',
   Kotlin: '#a97bff',
   Java: '#b07219',
-  GDScript: '#355570',
   PHP: '#4f5d95',
   Python: '#3572a5',
   Vue: '#41b883',
