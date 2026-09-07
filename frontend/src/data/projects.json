@@ -70,14 +70,13 @@
       "Diez páginas con navegación por menú desplegable: bodas, quinceañeras, egresados, baby shower, comuniones, despedidas y eventos corporativos",
       "Carruseles de imágenes y galería para mostrar los salones",
       "Formulario de contacto con validación de campos obligatorios en el navegador",
-      "Bootstrap 5.3.7 servido desde el propio repositorio, sin depender de un CDN externo",
-      "1.263 líneas de CSS propio sobre la grilla de Bootstrap"
+      "Base de grilla con Bootstrap 5.3 y 1.263 líneas de CSS propio encima, para que no parezca una plantilla"
     ],
     "stack": [
       "HTML5",
       "CSS3",
       "JavaScript",
-      "Bootstrap 5"
+      "Bootstrap 5.3"
     ],
     "demo": "https://maiacostavera.github.io/EnchantedHallEventos/"
   },
