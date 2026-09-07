@@ -5,7 +5,10 @@
     "titulo": "FoodieByte",
     "tipo": "Full stack",
     "destacado": true,
-    "roles": ["fullstack", "auditoria"],
+    "roles": [
+      "fullstack",
+      "auditoria"
+    ],
     "resumen": "Plataforma de pedidos gastronómicos de punta a punta: catálogo, carrito, cuentas de usuario y panel de administración.",
     "detalle": "Cliente en React 19 con Vite consumiendo una API REST propia en Express. Persistencia en MySQL a través de Sequelize, con migraciones y seeders versionados.",
     "highlights": [
@@ -14,7 +17,16 @@
       "Gestión de platos, categorías y pedidos con carga de imágenes (Multer)",
       "Esquema de base de datos versionado con migraciones de Sequelize CLI"
     ],
-    "stack": ["React 19", "Vite", "Node.js", "Express", "Sequelize", "MySQL", "JWT", "bcrypt"],
+    "stack": [
+      "React 19",
+      "Vite",
+      "Node.js",
+      "Express",
+      "Sequelize",
+      "MySQL",
+      "JWT",
+      "bcrypt"
+    ],
     "demo": null
   },
   {
@@ -23,7 +35,9 @@
     "titulo": "MercadByte",
     "tipo": "Frontend / Angular",
     "destacado": true,
-    "roles": ["fullstack"],
+    "roles": [
+      "fullstack"
+    ],
     "resumen": "E-commerce de tecnología con catálogo por categorías, búsqueda dinámica y simulación de compra.",
     "detalle": "Trabajo final de Programación Web I (UCES, 2024), desarrollado en equipo. Componentes Angular reutilizables, ruteo entre categorías y detalle de producto, y formularios reactivos para la búsqueda.",
     "highlights": [
@@ -32,43 +46,40 @@
       "Flujo de compra simulado con retroalimentación visual",
       "Maquetado responsive con Bootstrap"
     ],
-    "stack": ["Angular", "TypeScript", "Bootstrap", "HTML5", "CSS3"],
-    "demo": null
-  },
-  {
-    "id": "app-peliculas",
-    "repo": "Parcial2Apps1",
-    "titulo": "App Películas",
-    "tipo": "Android nativo",
-    "destacado": true,
-    "roles": ["fullstack"],
-    "resumen": "Aplicación Android nativa para registrar y listar películas, con formulario de alta y listado dinámico.",
-    "detalle": "Escrita en Kotlin sobre Android SDK, con arquitectura por actividades, adapter propio para el RecyclerView y componentes de Material Design. Build con Gradle Kotlin DSL.",
-    "highlights": [
-      "Adapter personalizado para el listado (RecyclerView)",
-      "Formulario de registro con validación de campos",
-      "Componentes Material Design y ViewModel de AndroidX",
-      "Configuración de build con Gradle Kotlin DSL"
+    "stack": [
+      "Angular",
+      "TypeScript",
+      "Bootstrap",
+      "HTML5",
+      "CSS3"
     ],
-    "stack": ["Kotlin", "Android SDK", "Material Design", "Gradle KTS"],
     "demo": null
   },
   {
     "id": "enchanted-hall",
     "repo": "EnchantedHallEventos",
     "titulo": "Enchanted Hall Eventos",
-    "tipo": "Sitio web",
-    "destacado": false,
-    "roles": ["fullstack"],
-    "resumen": "Sitio institucional para una organizadora de eventos en Buenos Aires: bodas, quince años, egresos y eventos corporativos.",
-    "detalle": "Sitio multipágina construido con HTML, CSS y JavaScript, pensado para informar y convertir consultas de clientes.",
-    "highlights": [
-      "Diez páginas navegables con estructura y estilos propios",
-      "Secciones por tipo de evento con contenido diferenciado",
-      "Maquetado responsive sin frameworks de UI"
+    "tipo": "Sitio web multipágina",
+    "destacado": true,
+    "roles": [
+      "fullstack"
     ],
-    "stack": ["HTML5", "CSS3", "JavaScript"],
-    "demo": null
+    "resumen": "Sitio institucional para una organizadora de eventos en Buenos Aires: siete tipos de evento, galería y contacto repartidos en diez páginas navegables.",
+    "detalle": "Pensado para que un visitante encuentre su tipo de evento en dos clics y termine en el formulario de contacto. Maquetado sobre la grilla de Bootstrap 5, con más de mil líneas de estilos propios encima para que no parezca una plantilla.",
+    "highlights": [
+      "Diez páginas con navegación por menú desplegable: bodas, quinceañeras, egresados, baby shower, comuniones, despedidas y eventos corporativos",
+      "Carruseles de imágenes y galería para mostrar los salones",
+      "Formulario de contacto con validación de campos obligatorios en el navegador",
+      "Bootstrap 5.3.7 servido desde el propio repositorio, sin depender de un CDN externo",
+      "1.263 líneas de CSS propio sobre la grilla de Bootstrap"
+    ],
+    "stack": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap 5"
+    ],
+    "demo": "https://maiacostavera.github.io/EnchantedHallEventos/"
   },
   {
     "id": "el-bajoncito",
@@ -76,7 +87,9 @@
     "titulo": "El Bajoncito — Menú Digital",
     "tipo": "Sitio web",
     "destacado": false,
-    "roles": ["fullstack"],
+    "roles": [
+      "fullstack"
+    ],
     "resumen": "Menú digital para una rotisería, con el catálogo organizado por categorías y pedido directo por WhatsApp.",
     "detalle": "Proyecto enfocado en resolver un problema concreto de un comercio real: reemplazar el menú impreso por uno navegable desde el celular.",
     "highlights": [
@@ -84,7 +97,11 @@
       "Botón flotante de WhatsApp para pedidos directos",
       "Estructura de archivos separada por páginas, estilos e imágenes"
     ],
-    "stack": ["HTML5", "CSS3", "JavaScript"],
+    "stack": [
+      "HTML5",
+      "CSS3",
+      "JavaScript"
+    ],
     "demo": null
   },
   {
@@ -93,7 +110,9 @@
     "titulo": "Juego 2D en Godot",
     "tipo": "Game dev",
     "destacado": false,
-    "roles": ["fullstack"],
+    "roles": [
+      "fullstack"
+    ],
     "resumen": "Videojuego 2D con personaje controlable, mapa por tiles y generación automática de objetos.",
     "detalle": "Ejercicio de desarrollo de videojuegos con el motor Godot: escenas, nodos y scripting en GDScript.",
     "highlights": [
@@ -101,7 +120,10 @@
       "Generador de objetos con instanciación dinámica de escenas",
       "Mapa construido con TileMap y tileset propio"
     ],
-    "stack": ["Godot", "GDScript"],
+    "stack": [
+      "Godot",
+      "GDScript"
+    ],
     "demo": null
   },
   {
@@ -110,7 +132,9 @@
     "titulo": "Este portfolio",
     "tipo": "Frontend",
     "destacado": false,
-    "roles": ["fullstack"],
+    "roles": [
+      "fullstack"
+    ],
     "resumen": "El sitio que estás viendo: React 19 con Vite, modo claro/oscuro y proyectos que se sincronizan solos con la API de GitHub.",
     "detalle": "Diseño editorial propio, sin frameworks de UI. Los datos de cada repositorio (lenguaje, estrellas, última actividad) se consultan en vivo, con caché local y respaldo estático si la API no responde.",
     "highlights": [
@@ -119,7 +143,12 @@
       "Modo claro/oscuro con detección de preferencia del sistema",
       "Animaciones de entrada con Framer Motion, respetando prefers-reduced-motion"
     ],
-    "stack": ["React 19", "Vite", "Framer Motion", "CSS moderno"],
+    "stack": [
+      "React 19",
+      "Vite",
+      "Framer Motion",
+      "CSS moderno"
+    ],
     "demo": null
   }
 ]
