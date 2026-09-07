@@ -59,7 +59,7 @@ export default function Projects({ repos, estado, roleId, coincide }) {
         ))}
       </div>
 
-      <div className="projects__more hero__actions">
+      <div className="projects__more actions">
         {!verTodos && ordenados.length > VISIBLES_INICIALES && (
           <button type="button" className="btn" onClick={() => setVerTodos(true)}>
             Ver los {ordenados.length} proyectos <IconArrow />

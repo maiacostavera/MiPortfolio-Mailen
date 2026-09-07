@@ -24,7 +24,7 @@ export default function Contact() {
           Escribime y te respondo.
         </p>
 
-        <div className="hero__actions">
+        <div className="actions">
           <a className="btn btn--primary" href={`mailto:${profile.email}`}>
             Escribirme
           </a>

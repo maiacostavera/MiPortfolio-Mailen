@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "cv": "node ../cv/build-cv.mjs"
+    "cv": "node ../cv/build-cv.mjs",
+    "brand": "node ../brand/build-brand.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.43.0",

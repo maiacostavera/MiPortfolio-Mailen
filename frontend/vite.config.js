@@ -5,7 +5,13 @@ import react from '@vitejs/plugin-react';
 // asi que el build necesita ese prefijo. Para publicar en Vercel, Netlify o un
 // dominio propio (donde el sitio vive en la raiz), compilar con:
 //     VITE_BASE=/ npm run build
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? (process.env.VITE_BASE ?? '/MiPortfolio-Mailen/') : '/',
+//
+// `vite preview` sirve el build ya compilado, asi que tiene que usar el mismo
+// prefijo; solo el servidor de desarrollo trabaja desde la raiz.
+export default defineConfig(({ command, isPreview }) => ({
+  base:
+    command === 'build' || isPreview
+      ? (process.env.VITE_BASE ?? '/MiPortfolio-Mailen/')
+      : '/',
   plugins: [react()],
 }));
