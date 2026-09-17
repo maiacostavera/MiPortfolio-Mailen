@@ -57,6 +57,18 @@ para qué perfiles se destaca.
 **Actualizar el CV** → editar `cv/cv.html` y correr `npm run cv` desde
 `frontend/`. El PDF se regenera con las tipografías incrustadas.
 
+**Cambiar la captura de un proyecto** → reemplazar el archivo en
+`frontend/public/proyectos/` manteniendo el nombre, o cambiar el campo `vista`
+en `projects.json`. Conviene una captura de 1280×800 (proporción 16:10, la de
+una ventana de navegador) en JPG de menos de 150 kB. El campo `vistaAlt` es la
+descripción para lectores de pantalla.
+
+Las capturas actuales se tomaron corriendo cada proyecto en un navegador real:
+los sitios estáticos tal cual, y FoodieByte con su cliente de React levantado y
+la API respondida con los datos de su propio seeder, porque necesita MySQL. La
+de MercadByte es la que ya estaba en `adicional/capturas y diagramas` de ese
+repositorio.
+
 ## Detalles de implementación
 
 - **Datos de GitHub en vivo.** La API pública permite 60 pedidos por hora e IP,

@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import proyectos from '../data/projects.json';
 import { profile } from '../data/profile';
 import { IconArrow, IconGithub } from './Icons';
+import Lightbox from './Lightbox';
 import ProjectCard from './ProjectCard';
 import Section from './Section';
 
@@ -17,6 +19,7 @@ const MENSAJE_ESTADO = {
 
 export default function Projects({ repos, estado, roleId, coincide }) {
   const [verTodos, setVerTodos] = useState(false);
+  const [ampliado, setAmpliado] = useState(null);
 
   // Con un perfil elegido, los proyectos relevantes suben al principio.
   const ordenados = useMemo(() => {
@@ -55,6 +58,7 @@ export default function Projects({ repos, estado, roleId, coincide }) {
             indice={indice + 1}
             github={repos[proyecto.repo.toLowerCase()]}
             atenuado={roleId !== 'todo' && !relevante}
+            onAmpliar={setAmpliado}
           />
         ))}
       </div>
@@ -70,6 +74,16 @@ export default function Projects({ repos, estado, roleId, coincide }) {
           Ir a mi GitHub
         </a>
       </div>
+
+      <AnimatePresence>
+        {ampliado && (
+          <Lightbox
+            vista={ampliado.vista}
+            alt={ampliado.vistaAlt}
+            onCerrar={() => setAmpliado(null)}
+          />
+        )}
+      </AnimatePresence>
     </Section>
   );
 }

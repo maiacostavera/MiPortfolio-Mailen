@@ -1128,3 +1128,153 @@ img {
     transform: none;
   }
 }
+
+/* ============================================================
+   16. Captura de cada proyecto, en marco de navegador
+   ============================================================ */
+
+.marco {
+  margin: 0 0 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  transition: border-color 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.marco__barra {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--bg-sunken);
+  border-bottom: 1px solid var(--line);
+}
+
+.marco__puntos {
+  display: flex;
+  gap: 0.35rem;
+  flex: none;
+}
+
+.marco__puntos i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  opacity: 0.6;
+}
+
+.marco__url {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 0.1rem 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+
+/* El lienzo es un boton para poder ampliar la captura con teclado o mouse. */
+.marco__lienzo {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  line-height: 0;
+}
+
+.marco__lienzo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project:hover .marco {
+    border-color: var(--line-strong);
+    box-shadow: 0 2px 4px rgba(20, 17, 14, 0.06), 0 14px 40px rgba(20, 17, 14, 0.1);
+  }
+
+  .marco__lienzo:hover img {
+    transform: scale(1.02);
+  }
+}
+
+[data-theme='dark'] .project:hover .marco {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 14px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Capa de ampliacion */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: color-mix(in srgb, var(--bg-sunken) 92%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: zoom-out;
+}
+
+.lightbox__imagen {
+  max-width: min(1280px, 100%);
+  max-height: 88vh;
+  width: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  cursor: default;
+}
+
+.lightbox__cerrar {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.lightbox__cerrar:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.lightbox__cerrar svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 760px) {
+  .marco__url {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marco__lienzo:hover img {
+    transform: none;
+  }
+}
