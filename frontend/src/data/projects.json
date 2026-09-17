@@ -27,7 +27,9 @@
       "JWT",
       "bcrypt"
     ],
-    "demo": null
+    "demo": null,
+    "vista": "foodiebyte.jpg",
+    "vistaAlt": "Catálogo de FoodieByte: buscador, filtros por categoría y tarjetas de platos con foto, precio y tiempo de preparación."
   },
   {
     "id": "mercadbyte",
@@ -53,7 +55,9 @@
       "HTML5",
       "CSS3"
     ],
-    "demo": null
+    "demo": null,
+    "vista": "mercadbyte.jpg",
+    "vistaAlt": "Portada de MercadByte: banner de la tienda y productos agrupados por categoría con precio y botón de compra."
   },
   {
     "id": "enchanted-hall",
@@ -78,7 +82,9 @@
       "JavaScript",
       "Bootstrap 5.3"
     ],
-    "demo": "https://maiacostavera.github.io/EnchantedHallEventos/"
+    "demo": "https://maiacostavera.github.io/EnchantedHallEventos/",
+    "vista": "enchanted-hall.jpg",
+    "vistaAlt": "Portada de Enchanted Hall: menú de navegación por tipo de evento e imagen principal del salón montado."
   },
   {
     "id": "el-bajoncito",
@@ -101,7 +107,9 @@
       "CSS3",
       "JavaScript"
     ],
-    "demo": null
+    "demo": null,
+    "vista": "el-bajoncito.jpg",
+    "vistaAlt": "Portada de El Bajoncito: menú digital de la rotisería con el catálogo por categorías."
   },
   {
     "id": "portfolio",
@@ -126,6 +134,8 @@
       "Framer Motion",
       "CSS moderno"
     ],
-    "demo": null
+    "demo": null,
+    "vista": "portfolio.jpg",
+    "vistaAlt": "Portada de este portfolio: título, selector de perfil y accesos a proyectos y CV."
   }
 ]
