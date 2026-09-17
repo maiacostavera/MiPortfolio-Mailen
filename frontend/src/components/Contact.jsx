@@ -18,10 +18,10 @@ export default function Contact() {
           <span>§06 — Contacto</span>
         </p>
 
-        <h2 className="contact__title">¿Construimos algo seguro y bien hecho?</h2>
+        <h2 className="contact__title">¿Charlamos?</h2>
         <p className="contact__lead">
-          Estoy abierta a posiciones de auditoría IT, soporte técnico y desarrollo.
-          Escribime y te respondo.
+          Estoy buscando trabajo en auditoría IT, soporte o desarrollo. Escribime y te
+          contesto.
         </p>
 
         <div className="actions">
