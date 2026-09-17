@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import About from './components/About';
 import Contact from './components/Contact';
-import Cursor from './components/Cursor';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Hero from './components/Hero';
@@ -39,7 +38,6 @@ export default function App() {
       </a>
 
       <ScrollProgress />
-      <Cursor />
 
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
 

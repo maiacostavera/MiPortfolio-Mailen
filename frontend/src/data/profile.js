@@ -20,31 +20,31 @@ export const profile = {
 export const roles = [
   {
     id: 'todo',
-    label: 'Perfil completo',
+    label: 'Todo',
     titulo: 'Desarrolladora de software y auditora de sistemas.',
     bajada:
-      'Escribo código y también lo audito. Trabajo en una empresa que controla sistemas de casas de cambio, así que mis días se reparten entre programar, probar y revisar que todo cumpla la normativa.',
+      'Escribo código y también lo audito. Trabajo en una empresa que controla sistemas de casas de cambio: un día programo, al otro estoy revisando accesos o probando que algo no se rompa.',
   },
   {
     id: 'auditoria',
     label: 'Auditoría IT',
     titulo: 'Auditoría de sistemas y riesgo tecnológico.',
     bajada:
-      'Audito sistemas de casas y agencias de cambio bajo normativa del BCRA. Reviso accesos, leo logs y escribo los informes que después se usan para decidir. Como además programo, entiendo lo que estoy mirando.',
+      'Audito sistemas de casas y agencias de cambio bajo normativa del BCRA. Reviso accesos, leo logs y escribo los informes que después alguien usa para decidir. Programo, así que entiendo lo que estoy mirando.',
   },
   {
     id: 'soporte',
     label: 'Soporte / Mesa de ayuda',
     titulo: 'Soporte técnico, redes y resolución de incidentes.',
     bajada:
-      'Atiendo incidentes y me ocupo de que la conexión remota por VPN funcione y sea segura. Vengo de programación, y eso me ayuda a buscar por qué se rompió algo en vez de tapar el síntoma.',
+      'Atiendo incidentes y me ocupo de que la VPN ande y sea segura. Vengo de programación, así que cuando algo falla me quedo buscando por qué, no solo hasta que vuelva a funcionar.',
   },
   {
     id: 'fullstack',
     label: 'Full Stack',
     titulo: 'Desarrollo full stack.',
     bajada:
-      'React de un lado, Node y base de datos del otro. Como trabajo en QA y auditoría, lo que hago sale probado y con los permisos bien puestos desde el principio.',
+      'React de un lado, Node y base de datos del otro. Como trabajo en QA y auditoría, lo que armo sale probado y con los permisos puestos desde el principio.',
   },
 ];
 

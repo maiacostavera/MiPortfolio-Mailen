@@ -23,7 +23,7 @@ export default function RoleSwitcher({ roleId, onChange }) {
   return (
     <div className="roleswitch">
       <p className="roleswitch__label" id="roleswitch-label">
-        Ver mi perfil orientado a
+        ¿Qué puesto estás cubriendo?
       </p>
 
       <div className="roleswitch__options" role="group" aria-labelledby="roleswitch-label">
@@ -42,11 +42,11 @@ export default function RoleSwitcher({ roleId, onChange }) {
 
       <p className="roleswitch__hint">
         {roleId === 'todo'
-          ? 'Elegí un puesto y reordeno skills, experiencia y proyectos según lo que importa para ese rol.'
-          : 'Contenido reordenado para este puesto. '}
+          ? 'Tocá el que te interese y subo primero lo que te sirve para ese puesto.'
+          : 'Listo, arriba quedó lo más útil para ese puesto. '}
         {roleId !== 'todo' && (
           <button type="button" className="roleswitch__copy" onClick={copiarLink}>
-            {copiado ? '¡Link copiado!' : 'Copiar link de esta vista'}
+            {copiado ? 'Copiado' : 'Copiar este link'}
           </button>
         )}
       </p>
