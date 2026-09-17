@@ -42,8 +42,8 @@ export default function Projects({ repos, estado, roleId, coincide }) {
   return (
     <Section id="proyectos" numero="02" etiqueta="Proyectos" titulo="Lo que construí">
       <p className="section__lead">
-        Proyectos propios y académicos, del sitio estático al full stack con base de datos.
-        Cada uno enlaza al repositorio público: el código está para leerlo.
+        Del sitio de una sola página a la app con base de datos. Todos tienen el
+        repositorio abierto, así que podés entrar y mirar el código.
       </p>
 
       {MENSAJE_ESTADO[estado] && (

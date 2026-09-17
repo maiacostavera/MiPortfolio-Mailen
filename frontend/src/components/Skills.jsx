@@ -22,8 +22,7 @@ export default function Skills({ roleId, coincide }) {
   return (
     <Section id="skills" numero="03" etiqueta="Skills" titulo="Conocimientos técnicos">
       <p className="section__lead">
-        Herramientas con las que trabajo hoy, entre el desarrollo, el control de calidad
-        y la infraestructura.
+        Lo que uso hoy entre desarrollo, pruebas e infraestructura.
       </p>
 
       <div className="skills">

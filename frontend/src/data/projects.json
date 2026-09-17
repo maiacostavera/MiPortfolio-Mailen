@@ -9,13 +9,13 @@
       "fullstack",
       "auditoria"
     ],
-    "resumen": "Plataforma de pedidos gastronómicos de punta a punta: catálogo, carrito, cuentas de usuario y panel de administración.",
-    "detalle": "Cliente en React 19 con Vite consumiendo una API REST propia en Express. Persistencia en MySQL a través de Sequelize, con migraciones y seeders versionados.",
+    "resumen": "Una app de delivery entera, del catálogo al panel de administración. Es el proyecto más completo que tengo y todavía le estoy agregando cosas.",
+    "detalle": "El cliente es React con Vite y habla con una API propia hecha en Express. Los datos van a MySQL con Sequelize. Las migraciones están versionadas, así que cualquiera puede levantar la base desde cero.",
     "highlights": [
-      "Autenticación con JWT y contraseñas hasheadas con bcrypt",
-      "Control de accesos por roles: middleware separado para usuario y administrador",
-      "Gestión de platos, categorías y pedidos con carga de imágenes (Multer)",
-      "Esquema de base de datos versionado con migraciones de Sequelize CLI"
+      "Login con JWT y contraseñas guardadas con bcrypt, nunca en texto plano",
+      "Dos middlewares separados, uno para usuario y otro para administrador",
+      "Panel para cargar platos y categorías, con subida de imágenes",
+      "Carrito y seguimiento de pedidos"
     ],
     "stack": [
       "React 19",
@@ -40,13 +40,13 @@
     "roles": [
       "fullstack"
     ],
-    "resumen": "E-commerce de tecnología con catálogo por categorías, búsqueda dinámica y simulación de compra.",
-    "detalle": "Trabajo final de Programación Web I (UCES, 2024), desarrollado en equipo. Componentes Angular reutilizables, ruteo entre categorías y detalle de producto, y formularios reactivos para la búsqueda.",
+    "resumen": "Tienda de tecnología con catálogo por categorías y buscador. Fue el trabajo final de Programación Web I, hecho con una compañera.",
+    "detalle": "Mi primer proyecto con Angular. Componentes reutilizables para las tarjetas de producto, ruteo entre el catálogo y el detalle, y formularios reactivos para la búsqueda.",
     "highlights": [
-      "Tres categorías de productos con vista de detalle individual",
-      "Búsqueda dinámica sobre el catálogo con Angular Forms",
-      "Flujo de compra simulado con retroalimentación visual",
-      "Maquetado responsive con Bootstrap"
+      "Accesorios, notebooks, smartwatches y celulares, cada uno con su vista de detalle",
+      "Búsqueda que filtra el catálogo a medida que se escribe",
+      "Compra simulada con mensaje de confirmación",
+      "Maquetado con Bootstrap"
     ],
     "stack": [
       "Angular",
@@ -68,13 +68,13 @@
     "roles": [
       "fullstack"
     ],
-    "resumen": "Sitio institucional para una organizadora de eventos en Buenos Aires: siete tipos de evento, galería y contacto repartidos en diez páginas navegables.",
-    "detalle": "Pensado para que un visitante encuentre su tipo de evento en dos clics y termine en el formulario de contacto. Maquetado sobre la grilla de Bootstrap 5, con más de mil líneas de estilos propios encima para que no parezca una plantilla.",
+    "resumen": "Sitio para una organizadora de eventos en Buenos Aires. Diez páginas, una por cada tipo de evento, más galería y contacto.",
+    "detalle": "La idea era que alguien entre, encuentre su tipo de evento en dos clics y termine escribiendo. Lo armé sobre la grilla de Bootstrap y le puse más de mil líneas de CSS propio encima para que no quedara con cara de plantilla.",
     "highlights": [
-      "Diez páginas con navegación por menú desplegable: bodas, quinceañeras, egresados, baby shower, comuniones, despedidas y eventos corporativos",
-      "Carruseles de imágenes y galería para mostrar los salones",
-      "Formulario de contacto con validación de campos obligatorios en el navegador",
-      "Base de grilla con Bootstrap 5.3 y 1.263 líneas de CSS propio encima, para que no parezca una plantilla"
+      "Menú desplegable con bodas, quinceañeras, egresados, baby shower, comuniones, despedidas y corporativos",
+      "Galería con carruseles para mostrar los salones",
+      "Formulario de contacto con validación",
+      "1.263 líneas de CSS propio sobre Bootstrap 5.3"
     ],
     "stack": [
       "HTML5",
@@ -95,12 +95,12 @@
     "roles": [
       "fullstack"
     ],
-    "resumen": "Menú digital para una rotisería, con el catálogo organizado por categorías y pedido directo por WhatsApp.",
-    "detalle": "Proyecto enfocado en resolver un problema concreto de un comercio real: reemplazar el menú impreso por uno navegable desde el celular.",
+    "resumen": "Menú digital para una rotisería. Reemplaza la carta impresa por algo que se abre desde el celular.",
+    "detalle": "Un encargo chico y concreto: el comercio necesitaba mostrar el menú sin imprimirlo cada vez que cambia un precio.",
     "highlights": [
-      "Menú organizado por categorías, optimizado para mobile",
-      "Botón flotante de WhatsApp para pedidos directos",
-      "Estructura de archivos separada por páginas, estilos e imágenes"
+      "Menú por categorías, pensado para leerse en el celular",
+      "Botón flotante de WhatsApp para pedir directo",
+      "HTML, CSS y JavaScript, sin frameworks"
     ],
     "stack": [
       "HTML5",
@@ -120,13 +120,13 @@
     "roles": [
       "fullstack"
     ],
-    "resumen": "El sitio que estás viendo: React 19 con Vite, modo claro/oscuro y proyectos que se sincronizan solos con la API de GitHub.",
-    "detalle": "Diseño editorial propio, sin frameworks de UI. Los datos de cada repositorio (lenguaje, estrellas, última actividad) se consultan en vivo, con caché local y respaldo estático si la API no responde.",
+    "resumen": "Este sitio. Lo hice de cero para tener dónde mostrar lo demás.",
+    "detalle": "React con Vite, sin librerías de componentes: los estilos son todos míos. Los datos de cada repo los trae en vivo de la API de GitHub, con caché para no pasarme del límite de pedidos.",
     "highlights": [
-      "Integración en vivo con la API pública de GitHub y caché en localStorage",
-      "Selector de perfil que reordena el contenido según el puesto",
-      "Modo claro/oscuro con detección de preferencia del sistema",
-      "Animaciones de entrada con Framer Motion, respetando prefers-reduced-motion"
+      "Lenguaje, estrellas y última actividad se consultan a GitHub al abrir la página",
+      "Si GitHub no contesta, muestra los datos guardados y no rompe nada",
+      "Selector de perfil que reordena todo según el puesto",
+      "Modo claro y oscuro"
     ],
     "stack": [
       "React 19",

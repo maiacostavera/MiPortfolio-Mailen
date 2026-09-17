@@ -1038,42 +1038,76 @@ img {
   will-change: transform;
 }
 
-/* Cursor propio: solo se activa en escritorio con mouse.
-   Las piezas se centran con margin negativo para no pelear con el translate3d. */
+/* Cursor con forma de marca de registro de imprenta. Solo en escritorio con
+   mouse; las piezas se centran con translate(-50%,-50%) dentro del contenedor,
+   que es el que se mueve con translate3d desde JS. */
 .cursor {
   position: fixed;
   top: 0;
   left: 0;
+  width: 0;
+  height: 0;
   z-index: 300;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.cursor--punto {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-  border-radius: 50%;
+.cursor__brazo,
+.cursor__anillo {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: var(--accent);
+  transform-origin: center;
+  transition: width 0.35s var(--ease), height 0.35s var(--ease),
+    opacity 0.35s var(--ease);
 }
 
-.cursor--anillo {
-  width: 34px;
-  height: 34px;
-  margin: -17px 0 0 -17px;
-  border: 1px solid var(--line-strong);
+.cursor__brazo--v {
+  width: 1px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+}
+
+.cursor__brazo--h {
+  width: 22px;
+  height: 1px;
+  transform: translate(-50%, -50%);
+}
+
+/* El circulo fino solo aparece sobre algo clickeable. */
+.cursor__anillo {
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--accent);
   border-radius: 50%;
-  transition: opacity 0.3s ease, width 0.3s var(--ease), height 0.3s var(--ease),
-    margin 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+  background: transparent;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
 }
 
-.cursor--anillo[data-sobre] {
-  width: 58px;
-  height: 58px;
-  margin: -29px 0 0 -29px;
-  border-color: var(--accent);
-  background: var(--accent-soft);
+.cursor[data-sobre] .cursor__brazo--v {
+  height: 14px;
+}
+
+.cursor[data-sobre] .cursor__brazo--h {
+  width: 14px;
+}
+
+.cursor[data-sobre] .cursor__anillo {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Al pasar sobre algo interactivo la cruz gira y se convierte en un aspa. */
+.cursor[data-sobre] {
+  rotate: 45deg;
+}
+
+.cursor {
+  transition: opacity 0.3s ease, rotate 0.4s var(--ease);
 }
 
 /* Escondemos el cursor del sistema solo mientras el propio esta activo. */

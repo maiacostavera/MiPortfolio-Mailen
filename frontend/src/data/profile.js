@@ -23,34 +23,34 @@ export const roles = [
     label: 'Perfil completo',
     titulo: 'Desarrolladora de software y auditora de sistemas.',
     bajada:
-      'Construyo software que funciona y verifico que sea seguro, trazable y auditable. Trabajo en el cruce entre el desarrollo, el aseguramiento de calidad y el cumplimiento normativo.',
+      'Escribo código y también lo audito. Trabajo en una empresa que controla sistemas de casas de cambio, así que mis días se reparten entre programar, probar y revisar que todo cumpla la normativa.',
   },
   {
     id: 'auditoria',
     label: 'Auditoría IT',
-    titulo: 'Auditoría de sistemas, riesgo tecnológico y QA.',
+    titulo: 'Auditoría de sistemas y riesgo tecnológico.',
     bajada:
-      'Audito sistemas de casas y agencias de cambio bajo normativa BCRA: control de accesos, revisión de logs, análisis de riesgos e informes técnicos para decisiones gerenciales. Escribo código, así que entiendo lo que audito por dentro.',
+      'Audito sistemas de casas y agencias de cambio bajo normativa del BCRA. Reviso accesos, leo logs y escribo los informes que después se usan para decidir. Como además programo, entiendo lo que estoy mirando.',
   },
   {
     id: 'soporte',
     label: 'Soporte / Mesa de ayuda',
     titulo: 'Soporte técnico, redes y resolución de incidentes.',
     bajada:
-      'Resuelvo incidentes críticos y garantizo conectividad remota segura por VPN. Perfil técnico con formación en programación: diagnostico la causa raíz en lugar de aplicar parches temporales.',
+      'Atiendo incidentes y me ocupo de que la conexión remota por VPN funcione y sea segura. Vengo de programación, y eso me ayuda a buscar por qué se rompió algo en vez de tapar el síntoma.',
   },
   {
     id: 'fullstack',
     label: 'Full Stack',
-    titulo: 'Desarrollo full stack con obsesión por la calidad.',
+    titulo: 'Desarrollo full stack.',
     bajada:
-      'React, Node y bases de datos relacionales de punta a punta. Mi experiencia en QA y auditoría hace que lo que construyo llegue a producción probado, con control de accesos y sin sorpresas.',
+      'React de un lado, Node y base de datos del otro. Como trabajo en QA y auditoría, lo que hago sale probado y con los permisos bien puestos desde el principio.',
   },
 ];
 
 export const sobreMi = [
-  'Entiendo el desarrollo de software no solo como escribir código que funciona, sino como un ecosistema donde la seguridad, la trazabilidad y el cumplimiento normativo son innegociables.',
-  'Mi experiencia en entornos financieros y de alta exigencia operativa me enseñó a anticipar fallos antes de que lleguen a producción, fusionando la ingeniería de software con estándares rigurosos de control y auditoría tecnológica.',
+  'Estudio programación y trabajo auditando sistemas. Esa mezcla me cambió la forma de escribir código: antes miraba si andaba, ahora también miro quién puede entrar, qué queda registrado y qué pasa si falla.',
+  'El software con el que trabajo es del sector cambiario. Ahí un error no queda en un bug, puede ser un problema regulatorio. Me acostumbré a revisar dos veces y a dejar anotado lo que toco.',
 ];
 
 // Cada grupo declara para que perfiles es relevante.
@@ -127,27 +127,27 @@ export const experiencia = [
     empresa: 'Enivel7',
     periodo: '01-2026 — Presente',
     resumen:
-      'Rol mixto entre auditoría tecnológica, soporte técnico y aseguramiento de calidad sobre plataformas internas y de clientes del sector cambiario.',
+      'Trabajo en auditoría, soporte y QA sobre las plataformas internas y las de clientes del sector cambiario.',
     logros: [
       {
         roles: ['auditoria'],
         texto:
-          'Participación en el ciclo de auditoría de sistemas para casas y agencias de cambio, asegurando el cumplimiento de las normativas del BCRA y mitigando riesgos operativos.',
+          'Participo en las auditorías de sistemas de casas y agencias de cambio, revisando que cumplan la normativa del BCRA.',
       },
       {
         roles: ['soporte'],
         texto:
-          'Resolución de incidentes críticos de soporte y garantía de conectividad remota segura mediante VPN.',
+          'Atiendo incidentes de soporte y mantengo andando la conectividad remota por VPN.',
       },
       {
         roles: ['auditoria', 'fullstack'],
         texto:
-          'Ejecución integral de pruebas de aseguramiento de calidad (QA / testing) sobre plataformas internas.',
+          'Pruebo las plataformas internas antes de que los cambios lleguen a producción.',
       },
       {
         roles: ['auditoria'],
         texto:
-          'Redacción de informes técnicos de control para la toma de decisiones gerenciales.',
+          'Escribo los informes técnicos que después usa la gerencia para decidir.',
       },
     ],
   },
@@ -159,24 +159,24 @@ export const educacion = [
     institucion: 'Universidad de Ciencias Empresariales y Sociales (UCES)',
     periodo: '03-2024 — Presente',
     detalle:
-      'Formación en ciencias de la computación, estructuras de datos, programación web, aplicaciones móviles y bases de datos relacionales.',
+      'Cursé estructuras de datos, programación web, aplicaciones móviles y bases de datos. De ahí salieron varios de los proyectos que están más arriba.',
   },
 ];
 
 export const metodologia = [
   {
-    titulo: 'Probar antes de construir',
+    titulo: 'Pruebo mientras escribo',
     texto:
-      'Desarrollo orientado a pruebas: si no está cubierto por un test, todavía no está terminado.',
+      'Uso TDD cuando el proyecto lo permite. Me ahorra el rato de buscar a mano qué rompí.',
   },
   {
-    titulo: 'Seguridad desde el diseño',
+    titulo: 'Los permisos, primero',
     texto:
-      'Control de accesos, contraseñas hasheadas y validación en el servidor no son un extra al final del proyecto.',
+      'En FoodieByte separé el middleware de usuario del de administrador desde el arranque. Agregar eso después siempre sale peor.',
   },
   {
-    titulo: 'Trazabilidad',
+    titulo: 'Dejar registro',
     texto:
-      'Todo cambio deja registro: commits descriptivos, logs revisables e informes que otro puede auditar sin mí.',
+      'Commits que se entienden, logs que se pueden leer, informes que alguien puede seguir sin preguntarme nada.',
   },
 ];
